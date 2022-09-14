@@ -50,11 +50,11 @@ image::./images/create-kafka-instance.png[]
 
 Access the Learning resources section from the left side menu.
 
-image::./images/learning-resources.png
+image::./images/learning-resources.png[]
 
 Select the `Getting Started with Red Hat Openshift Streams for Apache Kafka` quickstart.
 
-image::./images/learning-resources-2.png
+image::./images/learning-resources-2.png[]
 
 [time=25]
 == Getting Started with Red Hat Openshift Streams for Apache Kafka
@@ -75,54 +75,119 @@ Access the Learning resources section from the left side menu.
 
 Select the `Getting started with Red Hat OpenShift Connectors` quickstart.
 
-image::./images/learning-resources-3.png
+image::./images/learning-resources-3.png[]
 
 NOTE: The creation of a new topic is not necessary since we can use the topic `my-first-kafka-topic` that was created in the previous lab.
 
+Click on the `Getting started with Red Hat OpenShift Connectors` to open the instructions.
+
 image::./images/connectors/01-learning-resource.png[]
+
+From the side menu, select `Connectors` > `Connectors Instance`. Click on Create a connection instance.
 
 image::./images/connectors/02-connector-instances.png[]
 
+In Connector type `data` in the search box, so select the `Data Generator source`.
+
 image::./images/connectors/03-create-connector.png[]
+
+Select the Kafka instance previously created.
 
 image::./images/connectors/03-create-connector-2.png[]
 
+Click on `Create a preview namespace`.
+
 image::./images/connectors/03-create-connector-3.png[]
+
+Click on `Create a preview namespace`.
 
 image::./images/connectors/03-create-connector-4.png[]
 
+Confirm it.
+
 image::./images/connectors/03-create-connector-5.png[]
+
+Select the preview namespace.
 
 image::./images/connectors/03-create-connector-6.png[]
 
+The topic `my-first-kafka-topic` was created in the previous lab.
+
+Fill the form with the following instructions: 
+
+. Topic name: `my-first-kafka-topic`
+. Content Type: `text/plain`
+. Message: `Hello World!`
+. Period: 10000
+
 image::./images/connectors/03-create-connector-7.png[]
+
+Review the connector information.
 
 image::./images/connectors/03-create-connector-8.png[]
 
+Check if it's deployed correctly.
+
 image::./images/connectors/03-create-connector-9.png[]
+
+Access the `my-first-kafka-topic` Kafka topic in your Kafka instance.
 
 image::./images/connectors/04-access-kafka-topic.png[]
 
+Go to the `Messages` tab. See if the messages are being stored succesfully in Kafka.
+
 image::./images/connectors/04-access-kafka-topic-messages.png[]
+
+Fine, we succesfully created the Source Connector. 
+A Kafka Producer, so right now let's create the Kafka Consumer (Sink Connector).
+
+On the Create Connector page, type: `http sink`.
 
 image::./images/connectors/05-create-sink.png[]
 
+Select the Kafka instance previously created.
+
 image::./images/connectors/05-create-sink-1.png[]
+
+Select the namespace already created.
 
 image::./images/connectors/05-create-sink-2.png[]
 
+On the configuration fill with:
+
+* Instance name: kafka-consumer
+* Client ID: The client ID generated in the previous lab
+* Client Secret: The client ID generated in the previous lab
+
 image::./images/connectors/05-create-sink-3.png[]
+
+Access the https://webhook.site to get your URL webhook.
 
 image::./images/connectors/05-create-sink-4.png[]
 
+Fill the form with: 
+
+* Consumes Format: `application/octet-stream`
+* Method: `POST`
+* URL: URL FROM webhook.site
+* Topic name: `my-first-kafka-topic`
+
 image::./images/connectors/05-create-sink-5.png[]
+
+In the Error Handling option select: `log`.
 
 image::./images/connectors/05-create-sink-6.png[]
 
+Check if everything is correctly deployed.
+
 image::./images/connectors/05-create-sink-7.png[]
+
+Check if the messages are being generated in the webbook tab from your browser.
 
 image::./images/connectors/06-check-messages-webhook.png[]
 
-image::./images/connectors/07-metrics.png[]
+Know that we are producing and consuming information from Kafka, let's take a look in the metrics from the Kafka instance dashboard.
+
+image::./images/connectors/07-kafka-metrics.png[]
 
 image::./images/connectors/07-kafka-metrics-1.png[]
