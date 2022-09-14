@@ -46,6 +46,8 @@ image::./images/developer-portal-registration.png[]
 
 Access the Red Hat Streams for Apache Kafka Page, and click on `Create instance`.
 
+https://developers.redhat.com/products/red-hat-openshift-streams-for-apache-kafka/overview
+
 image::./images/stream-for-apache-kafka-page.png[]
 
 {empty} +
