@@ -68,6 +68,7 @@ Follow the lab instructions from the portal. You in the end of this lab you must
 * Set the Access Control for the Kafka instance
 
 
+[time=20]
 == Getting started with Red Hat OpenShift Connectors
 
 Access the Learning resources section from the left side menu.
@@ -76,3 +77,52 @@ Select the `Getting started with Red Hat OpenShift Connectors` quickstart.
 
 image::./images/learning-resources-3.png
 
+NOTE: The creation of a new topic is not necessary since we can use the topic `my-first-kafka-topic` that was created in the previous lab.
+
+image::./images/connectors/01-learning-resource.png[]
+
+image::./images/connectors/02-connector-instances.png[]
+
+image::./images/connectors/03-create-connector.png[]
+
+image::./images/connectors/03-create-connector-2.png[]
+
+image::./images/connectors/03-create-connector-3.png[]
+
+image::./images/connectors/03-create-connector-4.png[]
+
+image::./images/connectors/03-create-connector-5.png[]
+
+image::./images/connectors/03-create-connector-6.png[]
+
+image::./images/connectors/03-create-connector-7.png[]
+
+image::./images/connectors/03-create-connector-8.png[]
+
+image::./images/connectors/03-create-connector-9.png[]
+
+image::./images/connectors/04-access-kafka-topic.png[]
+
+image::./images/connectors/04-access-kafka-topic-messages.png[]
+
+image::./images/connectors/05-create-sink.png[]
+
+image::./images/connectors/05-create-sink-1.png[]
+
+image::./images/connectors/05-create-sink-2.png[]
+
+image::./images/connectors/05-create-sink-3.png[]
+
+image::./images/connectors/05-create-sink-4.png[]
+
+image::./images/connectors/05-create-sink-5.png[]
+
+image::./images/connectors/05-create-sink-6.png[]
+
+image::./images/connectors/05-create-sink-7.png[]
+
+image::./images/connectors/06-check-messages-webhook.png[]
+
+image::./images/connectors/07-metrics.png[]
+
+image::./images/connectors/07-kafka-metrics-1.png[]
