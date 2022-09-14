@@ -21,9 +21,7 @@
     fuse_base_image_repo: registry.redhat.io/fuse7
     module_fuse: true
     module_camel_k: false
-    # change if you want to deploy the spring boot version
     branch: main
-    #branch: springboot
   tasks:
     - name: Define Module
       when:
@@ -80,38 +78,22 @@
       when: not delete_workshop
       tags: codeready
 
-    - name: Provision AMQ Broker Operator
-      include_role:
-        name: amq
-      with_sequence: start=1 end={{ num_users }}
-      when:
-        - num_users|int > 0
-        - not delete_workshop
+    # - name: Provision AMQ Streams Operator
+    #   include_role:
+    #     name: amq-streams
+    #   with_sequence: start=1 end={{ num_users }}
+    #   when:
+    #     - num_users|int > 0
+    #     - not delete_workshop
 
-    - name: Provision AMQ Streams Operator
-      include_role:
-        name: amq-streams
-      with_sequence: start=1 end={{ num_users }}
-      when:
-        - num_users|int > 0
-        - not delete_workshop
-
-    - name: Provision Fuse Console Operator
-      with_sequence: start=1 end={{ num_users }}
-      when:
-        - num_users|int > 0
-        - not delete_workshop
-      include_role:
-        name: fuse-console
-
-    - name: Provision CamelK Operator
-      with_sequence: start=1 end={{ num_users }}
-      when:
-        - num_users|int > 0
-        - not delete_workshop
-        - module_camel_k|bool
-      include_role:
-        name: camel-k
+    # - name: Provision CamelK Operator
+    #   with_sequence: start=1 end={{ num_users }}
+    #   when:
+    #     - num_users|int > 0
+    #     - not delete_workshop
+    #     - module_camel_k|bool
+    #   include_role:
+    #     name: camel-k
 
     - name: Installation Finished
       when:
